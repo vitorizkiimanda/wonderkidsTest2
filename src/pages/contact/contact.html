@@ -1,17 +1,12 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let data of favorit">
+      <ion-thumbnail item-start>
+        <img [src]="data.gambar">
+      </ion-thumbnail>
+      <h2>{{data.judul}}</h2>
+      <p>{{data.lokasi}}</p>
+      <button ion-button clear item-end (click)="bukaRincian(data)">View</button>
     </ion-item>
   </ion-list>
 </ion-content>
